@@ -24,7 +24,7 @@
                 $time_notif = time()+15;
                 f("bot_kirim_perintah")("sendMessage",[
                     "chat_id"=>f("get_config")('bot_admins')[0],
-                    "text"=>(time()-$time1)." detik berlalu.",
+                    "text"=>(time()-$time1)." detik berlalu. $srvcode",
                 ]);
             }
             if($loopcount > 9999){
