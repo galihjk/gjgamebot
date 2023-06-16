@@ -1,3 +1,3 @@
 <?php
 include("init.php");
-f("srv.run")();
+echo f("srv.run")();
