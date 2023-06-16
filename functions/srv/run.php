@@ -30,10 +30,10 @@
             if(time()-$time1 > 30){
                 f("srv.get_without_wait")("http://galihjk.my.id/gjgamebot/srv_run_fdb8e0f27050d87f4faad843c4da5f3f.php");
             }
-            if($loopcount > 9999){
+            if(time()-$time1 > 40){
                 f("bot_kirim_perintah")("sendMessage",[
                     "chat_id"=>f("get_config")('bot_admins')[0],
-                    "text"=>"Server Loop End",
+                    "text"=>"limit 40 sec.",
                 ]);
                 break;
             }
