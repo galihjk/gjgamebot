@@ -11,6 +11,11 @@ function hnd_msg_prv_start($botdata){
             "text"=>"test START!",
         ]);
 
+        f("bot_kirim_perintah",5)("sendMessage",[
+            "chat_id"=>$chat_id,
+            "text"=>"5 detik telah beralu",
+        ]);
+
         return true;
     }
     return false;

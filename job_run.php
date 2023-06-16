@@ -6,6 +6,6 @@ if($last_job_run != $current_time){
     f("data_save")("last_job_run",$current_time);
 
     // $delay = $current_time - $last_job_run;
-    f("job_unpin")($current_time);
+    
 }
 echo "Running job [$current_time]";
