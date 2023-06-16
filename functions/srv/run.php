@@ -23,6 +23,7 @@
                 ]);
                 break;
             }
+            sleep(1);
         }
         return true;
     }
