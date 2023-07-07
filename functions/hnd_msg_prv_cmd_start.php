@@ -1,5 +1,5 @@
 <?php
-function hnd_msg_prv_start($botdata){
+function hnd_msg_prv_cmd_start($botdata){
     $text = $botdata["text"] ?? "";
     if(f("str_is_diawali")($text,"/start")){
         
@@ -8,12 +8,7 @@ function hnd_msg_prv_start($botdata){
 
         f("bot_kirim_perintah")("sendMessage",[
             "chat_id"=>$chat_id,
-            "text"=>"test START!",
-        ]);
-
-        f("bot_kirim_perintah",5)("sendMessage",[
-            "chat_id"=>$chat_id,
-            "text"=>"5 detik telah beralu",
+            "text"=>"test START! (private)",
         ]);
 
         return true;

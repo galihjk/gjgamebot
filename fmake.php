@@ -11,9 +11,9 @@ if(!empty($argv[1])){
     }
     $function_name = str_replace(".","__",$f);
     $data = "<?php
-    function $function_name(\$param){
-        return \$param;
-    }
+function $function_name(\$param){
+    return \$param;
+}
     ";
     file_put_contents($filename, $data);
     echo "Fungsi $f berhasil dibuat";
