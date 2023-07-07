@@ -10,7 +10,7 @@ f("data_save")("servercode", $srvcode);
 //     "text"=>"Server Started: $srvcode",
 // ]);
 $offset = f("data_load")("get_updates_offset",0);
-$jenis_update = [
+$jenis_updates = [
     "message",
     // "callback_query",
 ];
