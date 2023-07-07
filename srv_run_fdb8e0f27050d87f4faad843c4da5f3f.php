@@ -32,24 +32,19 @@ while(true){
         ]);
         f("bot_kirim_perintah")("sendMessage",[
             "chat_id"=>f("get_config")('bot_admins')[0],
-            "text"=>(time()-$time1)." detik berlalu. $srvcode. $offset. ".print_r(array_keys($getupdates),true),
+            "text"=>(time()-$time1)." detik berlalu. $srvcode. $offset.",
         ]);
         if(time()-$time1 > 60){
             f("srv.get_without_wait")(f("get_config")("run_srv"));
+            break;
         }
         f("data_save")("servertime", time());
     }
-    if(time()-$time1 > 70){
-        // f("bot_kirim_perintah")("sendMessage",[
-        //     "chat_id"=>f("get_config")('bot_admins')[0],
-        //     "text"=>"limit 70 sec.",
-        // ]);
-        break;
-    }    
 
     $getupdates = f("bot_kirim_perintah")("getUpdates",[
         "offset"=>$offset,
     ]);
+
     if(!empty($getupdates["result"])){
         $updates = $getupdates["result"];
         foreach($updates as $update){

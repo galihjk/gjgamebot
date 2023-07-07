@@ -5,7 +5,7 @@
         curl_setopt($ch, CURLOPT_TIMEOUT, 1);
         $response = curl_exec($ch);
         curl_close($ch);
-        echo "\nurl=$url\n";
+        // echo "\nurl=$url\n";
         return $response;
     }
     
