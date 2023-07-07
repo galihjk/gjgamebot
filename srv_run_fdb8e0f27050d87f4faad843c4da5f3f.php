@@ -27,10 +27,13 @@ while(true){
     
     if(time() >= $time_notif){
         $time_notif = time()+15;
-        // f("bot_kirim_perintah")("sendMessage",[
-        //     "chat_id"=>f("get_config")('bot_admins')[0],
-        //     "text"=>(time()-$time1)." detik berlalu. $srvcode",
-        // ]);
+        $getupdates = f("bot_kirim_perintah")("getUpdates",[
+            "offset"=>$offset,
+        ]);
+        f("bot_kirim_perintah")("sendMessage",[
+            "chat_id"=>f("get_config")('bot_admins')[0],
+            "text"=>(time()-$time1)." detik berlalu. $srvcode. $offset. ".print_r(array_keys($getupdates),true),
+        ]);
         if(time()-$time1 > 60){
             f("srv.get_without_wait")(f("get_config")("run_srv"));
         }
