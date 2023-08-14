@@ -53,6 +53,7 @@ while(true){
 
     if(!empty($getupdates["result"])){
         $updates = $getupdates["result"];
+        $updated_users = [];
         foreach($updates as $update){
             foreach($jenis_updates as $item_jenis){
                 if(!empty($update[$item_jenis])){
@@ -60,6 +61,11 @@ while(true){
                     if(!empty($botdata["from"]["first_name"])){
                         $botdata["from"]["first_name"] = str_replace("<", "&lt;", $botdata["from"]["first_name"]);
                         $botdata["from"]["first_name"] = str_replace("'", "&apos;", $botdata["from"]["first_name"]);
+                        if(!in_array($botdata["from"]["id"],$updated_users)){
+                            $userid = $botdata["from"]["id"];
+                            $updated_users[] = $userid;
+                            f("set_user")($userid, $botdata["from"]);
+                        }
                     }
                     if(!empty($botdata["from"]["last_name"])){
                         $botdata["from"]["last_name"] = str_replace("<", "&lt;", $botdata["from"]["last_name"]);
@@ -74,5 +80,7 @@ while(true){
         }
         f("data_save")("get_updates_offset",$offset);
     }
+
+    sleep(rand(0,1));
 
 }
