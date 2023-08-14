@@ -5,13 +5,19 @@ $time1 = time();
 $time_notif = time()+15;
 $srvcode = md5(date("mdHis").rand(0,100));
 f("data_save")("servercode", $srvcode);
+
+sleep(2); //wait for another server to stop
+
 // f("bot_kirim_perintah")("sendMessage",[
 //     "chat_id"=>f("get_config")('bot_admins')[0],
 //     "text"=>"Server Started: $srvcode",
 // ]);
+
 $offset = f("data_load")("get_updates_offset",0);
 $jenis_updates = [
     "message",
+    "inline_query",
+    "chosen_inline_result",
     // "callback_query",
 ];
 while(true){
@@ -50,7 +56,16 @@ while(true){
         foreach($updates as $update){
             foreach($jenis_updates as $item_jenis){
                 if(!empty($update[$item_jenis])){
-                    f("handle_$item_jenis")($update[$item_jenis]);
+                    $botdata = $update[$item_jenis];
+                    if(!empty($botdata["from"]["first_name"])){
+                        $botdata["from"]["first_name"] = str_replace("<", "&lt;", $botdata["from"]["first_name"]);
+                        $botdata["from"]["first_name"] = str_replace("'", "&apos;", $botdata["from"]["first_name"]);
+                    }
+                    if(!empty($botdata["from"]["last_name"])){
+                        $botdata["from"]["last_name"] = str_replace("<", "&lt;", $botdata["from"]["last_name"]);
+                        $botdata["from"]["last_name"] = str_replace("'", "&apos;", $botdata["from"]["last_name"]);
+                    }
+                    f("handle_$item_jenis")($botdata);
                     break;
                 }
             }
