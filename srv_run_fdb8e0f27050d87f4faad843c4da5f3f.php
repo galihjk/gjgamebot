@@ -1,4 +1,5 @@
 <?php
+exit();
 include("init.php");
 
 $time1 = time();
