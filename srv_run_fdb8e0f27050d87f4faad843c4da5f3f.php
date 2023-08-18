@@ -20,7 +20,7 @@ $jenis_updates = [
     "inline_query",
     "chosen_inline_result",
     "my_chat_member",
-    // "callback_query",
+    "callback_query",
 ];
 while(true){
 

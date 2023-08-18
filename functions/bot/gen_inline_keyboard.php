@@ -1,4 +1,19 @@
 <?php
+/*
+	$reply_markup = inlineKeyBoard([
+        'underconstruction',
+        ['Satu', 'underconstruction'],
+        ['Dua', 'callback_data'=>'underconstruction'],
+        ['text'=>'Tiga', 'callback_data'=>'underconstruction'],
+        ['text'=>'4. (restart bot)', 'url'=>'http://t.me/galihjkbot?start=1','width'=>2],
+        ['5. (mention bot)','width'=>2,'switch_inline_query_current_chat'=>'test'],
+        ['Enam (blog)','https://gjberkarya.blogspot.com',2],
+        ['text'=>'Tujuh (galihjkdev)','url'=>'t.me/galihjkdev',1],
+        ['Delapan', 'PilihDelapan'],			
+        ['9 (select and mention bot)','switch_inline_query'=>'test','width'=>4],
+        ['text'=>'Sepuluh (telegram bot api)','url'=>'core.telegram.org/bots/api'],
+    ],$jml_kolom);
+*/
 function bot__gen_inline_keyboard($array, $max_col = 0, $jsonencode=false){
 	if(empty($max_col)){
 		$automaxcol = true;
