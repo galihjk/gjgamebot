@@ -1,7 +1,10 @@
 <?php
-function data__load($name, $empty = []){
+function data__load($name, $empty = [], $force_reload = false){
 
 	$data = $empty;
+
+    if($force_reload) $GLOBALS['data'][$name] = null;
+
     if(empty($GLOBALS['data'][$name])){
 
         $filename="data/$name.json";

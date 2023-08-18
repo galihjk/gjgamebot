@@ -24,7 +24,7 @@ $jenis_updates = [
 ];
 while(true){
 
-    $srvcode_current = f("data.load")("servercode", "");
+    $srvcode_current = f("data.load")("servercode", "", true);
     if($srvcode_current != $srvcode){
         f("bot.kirim_perintah")("sendMessage",[
             "chat_id"=>f("get_config")('bot_admins')[0],
