@@ -7,12 +7,12 @@ $time_notif = time()+15;
 $srvcode = md5(date("mdHis").rand(0,100));
 f("data.save")("servercode", $srvcode);
 
-sleep(3); //wait for another server to stop
+sleep(2); //wait for another server to stop
 
-f("bot.kirim_perintah")("sendMessage",[
-    "chat_id"=>f("get_config")('bot_admins')[0],
-    "text"=>"Server Started: $srvcode",
-]);
+// f("bot.kirim_perintah")("sendMessage",[
+//     "chat_id"=>f("get_config")('bot_admins')[0],
+//     "text"=>"Server Started: $srvcode",
+// ]);
 
 $offset = f("data.load")("get_updates_offset",0);
 $jenis_updates = [
@@ -41,10 +41,10 @@ while(true){
     if(time() >= $time_notif){
         $time_notif = time()+15;
         
-        f("bot.kirim_perintah")("sendMessage",[
-            "chat_id"=>f("get_config")('bot_admins')[0],
-            "text"=>(time()-$time1)." detik berlalu. $srvcode. $offset.",
-        ]);
+        // f("bot.kirim_perintah")("sendMessage",[
+        //     "chat_id"=>f("get_config")('bot_admins')[0],
+        //     "text"=>(time()-$time1)." detik berlalu. $srvcode. $offset.",
+        // ]);
         if(time()-$time1 > 60){
             $getupdates = f("bot.kirim_perintah")("getUpdates",[
                 "offset"=>$offset,
@@ -71,9 +71,9 @@ while(true){
                         $botdata["from"]["first_name"] = str_replace("<", "&lt;", $botdata["from"]["first_name"]);
                         $botdata["from"]["first_name"] = str_replace("'", "&apos;", $botdata["from"]["first_name"]);
                         if(!in_array($botdata["from"]["id"],$updated_users)){
-                            $userid = $botdata["from"]["id"];
-                            $updated_users[] = $userid;
-                            f("user.set")($userid, $botdata["from"]);
+                            $user_id = $botdata["from"]["id"];
+                            $updated_users[] = $user_id;
+                            f("user.set")($user_id, $botdata["from"]);
                         }
                     }
                     if(!empty($botdata["from"]["last_name"])){
@@ -84,7 +84,7 @@ while(true){
                     break;
                 }
             }
-            file_put_contents("log/unhandled_LAST.txt", $update);
+            file_put_contents("log/unhandled_LAST.txt", print_r($update,true));
             $offset = 1+$update["update_id"];
         }
         f("data.save")("get_updates_offset",$offset);

@@ -1,7 +1,9 @@
 <?php
 function bot__handle__message__group__cmd__play_sw($botdata){
     $chat_id = $botdata["chat"]["id"];
-    if(f("game.check_not_playing")($chat_id)){
+    $user_id = $botdata["from"]["id"];
+
+    if(f("game.check_not_initiating")($botdata) and f("game.check_not_playing")($botdata)){
         $mode = "personal";
         $kategori = "alat";
         $waktujawab = 60;
@@ -14,15 +16,22 @@ function bot__handle__message__group__cmd__play_sw($botdata){
         $text .= "Mulai: /start_sw_$mode"."_$kategori"."_$waktujawab";
         
         $chat_id = $botdata["chat"]["id"];
-        f("bot.kirim_perintah")("sendMessage",[
+        $result = f("bot.kirim_perintah")("sendMessage",[
             "chat_id"=>$chat_id,
             "text"=>$text,
             'parse_mode'=>'HTML',
             'reply_markup' => f("bot.gen_inline_keyboard")([
-                ['Ubah Mode', "nothing"],
-                ['Ubah Kategori', "nothing"],
-                ['Ubah Waktu Jawab', "nothing"],
+                ['Ubah Mode','switch_inline_query_current_chat'=>'sw_ubah_mode'],
+                ['Ubah Kategori', 'switch_inline_query_current_chat'=>'sw_ubah_kategori'],
+                ['Ubah Waktu Jawab', 'switch_inline_query_current_chat'=>'sw_ubah_waktu_jawab'],
             ]),
+        ]);
+        $msgid = $result['result']['message_id'];
+
+        f("data.save")("initiating/$user_id",[
+            "game_name"=>"Secret Word",
+            "chat_id"=>$chat_id,
+            "msgid"=>$msgid,
         ]);
     }
 }

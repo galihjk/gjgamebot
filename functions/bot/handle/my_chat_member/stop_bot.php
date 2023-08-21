@@ -6,7 +6,7 @@ function bot__handle__my_chat_member__stop_bot($botdata){
     and !empty($botdata["new_chat_member"]["status"])
     and $botdata["new_chat_member"]["status"] == "kicked"
     ){
-        f("user.set")($userid, ['STOP_BOT'=>date("Y-m-d H:i:s")]);
+        f("user.set")($user_id, ['STOP_BOT'=>date("Y-m-d H:i:s")]);
         return true;
     }
     return false;

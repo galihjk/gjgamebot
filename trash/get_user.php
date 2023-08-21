@@ -1,5 +1,5 @@
 <?php
-function get_user($userid){
-    return f("data.load")("users/$userid");
+function get_user($user_id){
+    return f("data.load")("users/$user_id");
 }
     

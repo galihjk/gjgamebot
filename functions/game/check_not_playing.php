@@ -1,5 +1,6 @@
 <?php
-function game__check_not_playing($chat_id){
+function game__check_not_playing($botdata){
+    $chat_id = $botdata["chat"]["id"];
     $playingdata = f("data.load")("playing/$chat_id");
     if(empty($playingdata)){
         return true;
