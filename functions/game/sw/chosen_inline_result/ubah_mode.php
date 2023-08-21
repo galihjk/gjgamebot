@@ -1,6 +1,6 @@
 <?php
 function game__sw__chosen_inline_result__ubah_mode($botdata){
-    if(("str.is_diawali")($botdata['result_id'],"sw_setmode_")){
+    if(f("str.is_diawali")($botdata['result_id'],"sw_setmode_")){
         $user_id = $botdata["from"]["id"];
         $initdata = f("data.load")("initiating/$user_id");
         if(empty($initdata)){
