@@ -1,0 +1,20 @@
+Array
+(
+    [0] => answerInlineQuery
+    [1] => Array
+        (
+            [inline_query_id] => 975061344088497789
+            [results] => [{"type":"article","id":"sw_setmode_personal","title":"Mode Personal","description":"Tiap pemain membuat kata rahasia sendiri untuk ditebak pemain lain","input_message_content":{"message_text":"*memilih <b>MODE PERSONAL<\/b>\nTiap pemain membuat kata rahasia sendiri untuk ditebak pemain lain","parse_mode":"HTML"},"thumb_url":"https:\/\/cdn-icons-png.flaticon.com\/512\/953\/953789.png"},{"type":"article","id":"sw_setmode_randomteam","title":"Mode Random Team (underconstruction)","description":"Mohon maaf, mode ini belum bisa dipakai","input_message_content":{"message_text":"*memilih <b>MODE RANDOM TEAM<\/b>\nMohon maaf, mode ini belum bisa dipakai (Underconstruction)","parse_mode":"HTML"},"thumb_url":"https:\/\/cdn-icons-png.flaticon.com\/512\/5822\/5822134.png"}]
+            [cache_time] => 100
+        )
+
+    [2] => 5930951445:AAE-KujRgOTT8sJrHLm_MpiMbKhlavq3tdU
+)
+
+
+Array
+(
+    [ok] => 
+    [error_code] => 400
+    [description] => Bad Request: query is too old and response timeout expired or query ID is invalid
+)

@@ -1,0 +1,1 @@
+bot.handle.message.group.cmd.start_sw_personal_alat_60

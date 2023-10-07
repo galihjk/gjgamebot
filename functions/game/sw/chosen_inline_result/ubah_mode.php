@@ -8,7 +8,7 @@ function game__sw__chosen_inline_result__ubah_mode($botdata){
         }
         $chat_id = $initdata["chat_id"];
 
-        f("bot.kirim_perintah")("sendMessage",[
+        f("bot.execute")("sendMessage",[
             'chat_id' => $chat_id,
             'text'=> "ini: ".print_r([$initdata,$botdata],true),
             'parse_mode'=>'HTML',

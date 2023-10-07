@@ -6,7 +6,7 @@ function game__check_not_playing($botdata){
         return true;
     }
     else{
-        f("bot.kirim_perintah")("sendMessage",[
+        f("bot.execute")("sendMessage",[
             "chat_id"=>$chat_id,
             "text"=>"Mohon maaf, saat ini sedang berlangsung permainan ".$playingdata['game_name'],
         ]);

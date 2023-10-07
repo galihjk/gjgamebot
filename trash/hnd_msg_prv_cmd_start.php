@@ -6,7 +6,7 @@ function hnd_msg_prv_cmd_start($botdata){
         $chat = $botdata["chat"];
         $chat_id = $chat["id"];
 
-        f("bot.kirim_perintah")("sendMessage",[
+        f("bot.execute")("sendMessage",[
             "chat_id"=>$chat_id,
             "text"=>"test START! (private)",
         ]);

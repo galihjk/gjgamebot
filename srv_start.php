@@ -1,6 +1,6 @@
 <?php
 include("init.php");
-// f("bot.kirim_perintah")("sendMessage",[
+// f("bot.execute")("sendMessage",[
 //     "chat_id"=>f("get_config")('bot_admins')[0],
 //     "text"=>"Server Started",
 // ]);

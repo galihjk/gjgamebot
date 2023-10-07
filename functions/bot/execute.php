@@ -1,5 +1,5 @@
 <?php
-function bot__kirim_perintah($perintah,$data,$bot_token = "default"){
+function bot__execute($perintah,$data,$bot_token = "default"){
     if($bot_token == "default"){
         $bot_token = f("get_config")("bot_token");
     }

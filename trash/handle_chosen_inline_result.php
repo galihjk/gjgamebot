@@ -10,7 +10,7 @@ function handle_chosen_inline_result($botdata){
     $chat_id = $explode[1];
     $jawaban = $explode[2];
 
-    f("bot.kirim_perintah")("sendMessage",[
+    f("bot.execute")("sendMessage",[
         'chat_id' => $chat_id,
         'text'=> "ini: ".print_r($botdata,true),
         'parse_mode'=>'HTML',

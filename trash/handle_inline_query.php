@@ -28,7 +28,7 @@ function handle_inline_query($botdata){
             'thumb_url'=>'https://icon2.cleanpng.com/20180715/eqi/kisspng-speech-balloon-computer-icons-hablante-sprecherzie-icon-conversation-5b4b58176c9a10.6350522215316644074448.jpg',
         ];
     }
-    f("bot.kirim_perintah")("answerInlineQuery",[
+    f("bot.execute")("answerInlineQuery",[
         'inline_query_id'=>$botdata['id'],
         'results'=>json_encode($results),
         'cache_time'=>1

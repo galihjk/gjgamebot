@@ -1,0 +1,43 @@
+Array
+(
+    [message_id] => 50206
+    [from] => Array
+        (
+            [id] => 227024160
+            [is_bot] => 
+            [first_name] => Galih
+            [last_name] => J K
+            [username] => galihjk
+            [language_code] => en
+        )
+
+    [chat] => Array
+        (
+            [id] => -1001635551800
+            [title] => Galih JK Dev Test Play
+            [username] => galihjkplay
+            [type] => supergroup
+        )
+
+    [date] => 1696455236
+    [text] => Untuk melihat daftar permainan, gunakan command /play
+    [entities] => Array
+        (
+            [0] => Array
+                (
+                    [offset] => 48
+                    [length] => 5
+                    [type] => bot_command
+                )
+
+        )
+
+    [via_bot] => Array
+        (
+            [id] => 5930951445
+            [is_bot] => 1
+            [first_name] => GJ Game
+            [username] => gjgamebot
+        )
+
+)

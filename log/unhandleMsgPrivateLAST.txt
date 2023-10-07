@@ -1,0 +1,36 @@
+Array
+(
+    [message_id] => 961
+    [from] => Array
+        (
+            [id] => 227024160
+            [is_bot] => 
+            [first_name] => Galih
+            [last_name] => J K
+            [username] => galihjk
+            [language_code] => en
+        )
+
+    [chat] => Array
+        (
+            [id] => 227024160
+            [first_name] => Galih
+            [last_name] => J K
+            [username] => galihjk
+            [type] => private
+        )
+
+    [date] => 1696207844
+    [text] => /play
+    [entities] => Array
+        (
+            [0] => Array
+                (
+                    [offset] => 0
+                    [length] => 5
+                    [type] => bot_command
+                )
+
+        )
+
+)

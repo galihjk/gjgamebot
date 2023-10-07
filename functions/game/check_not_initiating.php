@@ -7,7 +7,7 @@ function game__check_not_initiating($botdata){
         return true;
     }
     else{
-        f("bot.kirim_perintah")("sendMessage",[
+        f("bot.execute")("sendMessage",[
             "chat_id"=>$chat_id,
             "text"=>"Saat ini anda sedang menginisiasi permainan, silakan /cancel_init dahulu.",
         ]);

@@ -9,7 +9,7 @@ function game__sw__inline_query__ubah_mode($botdata){
     $user_id = $botdata["from"]["id"];
     $initdata = f("data.load")("initiating/$user_id");
     if(empty($initdata)){
-        f("bot.kirim_perintah")("answerInlineQuery",[
+        f("bot.execute")("answerInlineQuery",[
             'inline_query_id'=>$botdata['id'],
             'results'=>json_encode([
                 [
@@ -28,7 +28,7 @@ function game__sw__inline_query__ubah_mode($botdata){
         return true;
     }
 
-    f("bot.kirim_perintah")("answerInlineQuery",[
+    f("bot.execute")("answerInlineQuery",[
         "inline_query_id"=>$botdata["id"],
         "results"=>json_encode([
             [
