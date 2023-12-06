@@ -1,6 +1,6 @@
 <?php
 function db__q($q){
-    dump($q);
+    // dump($q);
     $mysqli = f("db.connect")();
     $data = [];
     // echo "<pre>";

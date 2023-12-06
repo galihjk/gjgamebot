@@ -73,7 +73,7 @@ function bot_kirim_curl($bot_token,$perintah,$data){
     curl_setopt($ch, CURLOPT_POST, count($data));
     curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
+    // echo "<pre>"; print_r([$ch,$bot_token,$perintah,$data,bot_url_kirim($bot_token,$perintah)."?".http_build_query($data)]);exit();
     $kembali = curl_exec ($ch);
     curl_close ($ch);
 

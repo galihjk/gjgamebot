@@ -10,6 +10,11 @@ if(empty($updates['result'])){
     die("no result");
 }
 else{
-    f("bot.handle")($updates['result']);
+    // f("bot.handle")($updates['result']);
+    $updates_got = $updates['result'];
+    foreach($updates_got as $item){
+        f("bot.add_update")($item);
+    }
+    
 }
 exit();

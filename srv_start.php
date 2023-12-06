@@ -6,5 +6,6 @@ include("init.php");
 // ]);
 $srvcode = md5(date("mdHis").rand(0,100));
 f("data.save")("servercode", $srvcode);
+echo f("get_config")("run_srv");
 f("srv.get_without_wait")(f("get_config")("run_srv"));
 echo "Server STARTED";

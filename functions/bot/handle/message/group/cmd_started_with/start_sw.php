@@ -16,8 +16,7 @@ function bot__handle__message__group__cmd_started_with__start_sw($botdata){
                 ['Join','nothing'],
             ]),
         ]);
-        f("data.save")("initiating/$user_id",[
-            "game_name"=>"Secret Word",
+        f("data.save")("initiating_user/$user_id",[
             "chat_id"=>$chat_id,
             "msgid"=>$result['result']['message_id'],
         ]);
